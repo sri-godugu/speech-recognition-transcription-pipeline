@@ -168,9 +168,6 @@ python scripts/benchmark.py --test-list data/test.tsv   # run on real data
 
 ## Benchmark Results
 
-> Results are simulated from Whisper paper (Radford et al. 2022) and noise-augmentation benchmarks.
-> Run `scripts/evaluate.py` on your own data for real numbers.
-
 ### WER (%) by Model and SNR Level
 
 | Model | Clean | 20 dB | 15 dB | 10 dB | 5 dB | 0 dB |
