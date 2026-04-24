@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Model weights (Whisper downloads to ~/.cache/whisper by default)
+*.pt
+*.pth
+*.ckpt
+*.bin
+
+# Audio data (keep .gitkeep)
+data/*.wav
+data/*.mp3
+data/*.flac
+data/*.ogg
+data/*.m4a
+data/*.mp4
+data/*.webm
+!data/.gitkeep
+
+# Outputs
+outputs/
+transcripts/
+eval_out/
+!outputs/.gitkeep
+
+# Results (keep benchmark CSVs and JSON committed)
+results/wer_vs_snr.png
+results/rtf_comparison.png
+results/wer_heatmap.png
+results/latency_breakdown.png
+
+# Logs
+*.log
+runs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*~

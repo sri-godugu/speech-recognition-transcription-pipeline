@@ -1,0 +1,39 @@
+# Benchmark configuration
+
+benchmark:
+  # Models to evaluate
+  models:
+    - tiny
+    - base
+    - small
+    - medium
+    - large-v3
+
+  # SNR levels for noise robustness evaluation (dB)
+  # null = clean (no added noise)
+  snr_levels:
+    - null        # clean
+    - 20
+    - 15
+    - 10
+    - 5
+    - 0
+
+  # Number of test samples per condition (null = all)
+  max_samples: null
+
+  # Chunking strategies to compare
+  chunk_strategies:
+    - fixed
+    - vad
+
+  # Noise reduction
+  test_noise_reduction: true
+
+  # Output
+  output_dir:    results/
+  save_plots:    true
+  save_audio:    false   # save noisy/denoised audio to output_dir/audio/
+
+  # Device for inference (null = auto)
+  device:       null

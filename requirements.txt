@@ -1,0 +1,13 @@
+torch>=2.0.0
+torchaudio>=2.0.0
+numpy>=1.23
+openai-whisper>=20231117
+PyYAML>=6.0
+matplotlib>=3.7
+scipy>=1.10
+
+# Optional / dev
+librosa>=0.10.0              # pyin F0 extraction, extra audio tools
+soundfile>=0.12.0            # alternative audio I/O backend
+deepmultilingualpunctuation  # neural punctuation restoration
+pytest>=7.0

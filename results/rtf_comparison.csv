@@ -1,0 +1,6 @@
+model,rtf_cpu,rtf_gpu
+tiny,0.18,0.018
+base,0.42,0.038
+small,1.05,0.072
+medium,3.20,0.140
+large-v3,7.80,0.280

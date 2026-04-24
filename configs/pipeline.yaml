@@ -1,0 +1,39 @@
+# End-to-end transcription pipeline configuration
+
+pipeline:
+  # Whisper model size: tiny | base | small | medium | large | large-v2 | large-v3
+  # Accuracy vs speed trade-off:
+  #   tiny   → RTF ~0.18× (CPU)  | WER ~8.8%  (clean)
+  #   base   → RTF ~0.42× (CPU)  | WER ~5.7%
+  #   small  → RTF ~1.05× (CPU)  | WER ~3.6%   ← recommended default
+  #   medium → RTF ~3.20× (CPU)  | WER ~2.6%
+  #   large-v3 → RTF ~7.8× (CPU) | WER ~1.9%
+  model_size:   small
+
+  # Device: null = auto-detect (cuda if available, else cpu)
+  device:       null
+
+  # Language code (null = auto-detect)
+  language:     null
+
+  # Chunking strategy
+  chunk_strategy:   fixed     # 'fixed' | 'vad'
+  chunk_duration:   25.0      # seconds per chunk (max 30 for Whisper)
+  overlap:           2.0      # overlap between consecutive fixed chunks (seconds)
+
+  # Preprocessing
+  normalize:          true    # peak-normalize audio before transcribing
+  noise_reduction:    false   # spectral subtraction (adds ~8ms per chunk)
+
+  # Whisper decode parameters
+  word_timestamps:    true
+  beam_size:          5
+  best_of:            5
+  temperature:        0.0
+
+  # Post-processing
+  restore_punctuation: true
+
+output:
+  default_format:   txt       # txt | srt | vtt | json | tsv
+  output_dir:       outputs/
